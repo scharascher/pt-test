@@ -1,0 +1,162 @@
+/* variables */
+:root {
+    --form-bg: #FFF;
+    --border-color: #BBB;
+    --border-hover-color: gray;
+    --border-focus-color: black;
+    --control-height: 3rem;
+    --border-radius: 0.2rem;
+    --border-height: 1px;
+    --transition-duration: 0.2s;
+}
+
+/* main styles */
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+}
+
+body {
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    font-size: 1rem;
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* container block */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FAFAFA;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+
+/* form block */
+.form {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border: var(--border-height) solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--form-bg);
+    margin: -5vh 10px 10px;
+}
+
+.form__header {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: 0.5rem 0 1.4rem;
+}
+
+.form__row {
+    margin-bottom: 1.5rem;
+}
+
+.form__action {
+    float: right;
+}
+
+/* form-control block */
+.form-control {
+    width: 100%;
+    height: var(--control-height);
+    border: none;
+    position: relative;
+}
+
+.form-control__label {
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    top: calc(var(--control-height) / 2 - 0.5rem);
+    z-index: 0;
+    border: none;
+    margin: 0 0 0 0.8rem;
+    padding: 0 0.2rem;
+    height: 1rem;
+    font-size: 1rem;
+    line-height: 1rem;
+    background: var(--form-bg);
+    transition: var(--transition-duration);
+}
+
+.form-control__input:hover {
+    border-color: var(--border-hover-color);
+}
+
+.form-control__input {
+    width: 100%;
+    height: calc(var(--control-height) - 2 * var(--border-height));
+    border: var(--border-height) solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 0 1rem;
+    font-size: 1rem;
+    background-color: transparent;
+    transition: var(--transition-duration);
+}
+
+.form-control__input:hover {
+    border-color: var(--border-hover-color);
+}
+
+.form-control__input:focus {
+    border-color: var(--border-focus-color);
+}
+
+.form-control__input:focus + .form-control__label, .form-control__label--focused {
+    top: -0.4rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
+}
+
+.form-control__input:focus + .form-control__label {
+    color: var(--border-focus-color);
+}
+
+.form-control__label--focused {
+    color: #909090;
+}
+
+/* form-submit block */
+.form-submit {
+    height: var(--control-height);
+    width: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-height) solid var(--border-color);
+    background: transparent;
+    font-size: 1rem;
+    padding: 0 1.5rem;
+    border-radius: var(--border-radius);
+}
+
+.form-submit:hover {
+    border-color: var(--border-hover-color);
+    cursor: pointer;
+}
+
+.form-submit:focus {
+    border-color: var(--border-focus-color);
+}
+
+
